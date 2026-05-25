@@ -1,0 +1,33 @@
+show dbs
+admin    40.00 KiB
+config  100.00 KiB
+local    72.00 KiB
+use vit
+switched to db vit
+db.createCollection("Employees")
+{ ok: 1 }
+db.Employee.insert({name:'Ariha',department:'ECE'})
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6a145a3397c97378b333ebd1')
+  }
+}
+db.Employee.insert({name:'Shree',marks:90,location:"Jharkhand"})
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6a145a6697c97378b333ebd2')
+  }
+}
+db.Employee.find()
+  _id: ObjectId('6a145a3397c97378b333ebd1'),
+  name: 'Ariha',
+  department: 'ECE'
+}{
+  _id: ObjectId('6a145a6697c97378b333ebd2'),
+  name: 'Kishor',
+  marks: 90,
+  location: 'Bihar'
+}
